@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<body>
+    <div class="container">
+        <header>
+            <h1>Travel Assistant</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Itineraries</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Your Personal Travel Companion</h2>
+                <p>Plan, book, and manage your trips with our AI-powered assistant</p>
+                <div class="booking-buttons">
+                    <a href="https://www.makemytrip.com/flights/" class="btn primary" target="_blank">Book Flights</a>
+                    <a href="https://www.oyorooms.com/" class="btn secondary" target="_blank">Book Hotels</a>
+                </div>
+            </section>
+
+            <section class="itineraries">
+                <div class="section-header">
+                    <h2>Your Itineraries</h2>
+                    <button id="createTripBtn" class="btn primary">Create New Trip</button>
+                </div>
+                
+                <div class="filters">
+                    <select id="tripFilter">
+                        <option value="all">All Trips</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="past">Past</option>
+                    </select>
+                    <input type="text" id="searchTrips" placeholder="Search trips...">
+                </div>
+                
+                <div id="itineraryList" class="itinerary-list">
+                    <!-- Itineraries will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="chat-section">
+                <div class="chat-header">
+                    <h2>Ask Your Travel Assistant</h2>
+                    <div class="chat-filters">
+                        <select id="assistantMode">
+                            <option value="general">General Advice</option>
+                            <option value="itinerary">Itinerary Planning</option>
+                            <option value="recommendations">Recommendations</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chat-container">
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message assistant">
+                            <p>Hello! I'm your travel assistant. How can I help you plan your next adventure?</p>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="userMessage" placeholder="Type your message...">
+                        <button id="sendMessage" class="btn primary">Send</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Travel Assistant. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Trip Modification Modal -->
+    <div id="tripModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Modify Trip</h2>
+            <form id="tripForm">
+                <div class="form-group">
+                    <label for="tripName">Trip Name</label>
+                    <input type="text" id="tripName" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tripNotes">Notes</label>
+                    <textarea id="tripNotes"></textarea>
+                </div>
+                <input type="hidden" id="tripId">
+                <div class="form-buttons">
+                    <button type="submit" class="btn primary">Save Trip</button>
+                    <button type="button" id="cancelTrip" class="btn secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
