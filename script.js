@@ -28,7 +28,7 @@ const sendMessage = document.getElementById('sendMessage');
 const assistantMode = document.getElementById('assistantMode');
 
 // Gemini API configuration
-const API_KEY = 'AIzaSyCTq1DoZ008rovrJ55vim_7-W3rBZTZpdk'; // Replace with your real API key
+const API_KEY = ''; // Replace with your real API key
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 // Initialize the application
